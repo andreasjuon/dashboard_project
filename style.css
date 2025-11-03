@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 h1,h2,h3,h4,h5 {
-    margin-top: 0;
+    margin: 0;
 }
 
 html,
@@ -16,7 +16,7 @@ body {
 /*BASIC LAYOUT*/
 .container {
     display: grid;
-    grid-template: 100px 1fr / minmax(200px,2fr) 15fr;
+    grid-template: 100px 1fr / minmax(220px,2fr) 15fr;
     height: 100vh;
     overflow: hidden;
 }
@@ -38,6 +38,16 @@ body {
     padding: 10px;
     height: 100%;
     min-height: 0;
+}
+
+/* Left bar */
+.menu_section {
+    display:grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+}
+.menu_section img {
+    width: 30px;
 }
 
 /* Main */
@@ -93,16 +103,31 @@ body {
 
 /* Header*/
 .header {
-    padding: 15px 50px;
+    padding: 0px 50px;
     display: grid;
-    grid-template: 50px 1fr / minmax(200px, 5fr) minmax(200px, 2fr);
+    grid-template-rows: 40px 1fr;
     gap: 10px;
+}
+.header * {
+    border: red solid 1px;
+    margin: 0px;
+}
+.header_top{
+    grid-template-columns: 50px 5fr 50px 100px 1fr;
+    display: grid;
+    align-items: center;
+}
+.header_bottom{
+    grid-template-columns: 150px 1fr repeat(3, 100px);
+    display: grid;
+    margin: 0px;
+    align-items: center;
 }
 .useractions{
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 place-items: center;
 }
-.useractions button{
+.header_bottom button{
     width: 60px;
 }
