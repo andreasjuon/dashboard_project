@@ -38,7 +38,7 @@ body {
 /*BASIC LAYOUT*/
 .container {
     display: grid;
-    grid-template: 100px 1fr / minmax(220px,2fr) 15fr;
+    grid-template: 120px 1fr / minmax(220px,2fr) 15fr;
     height: 100vh;
     overflow: hidden;
 }
@@ -123,16 +123,34 @@ body {
     grid-template: 1fr;
     background-color: white;
     padding: 10px;
+    row-gap: 15px;
 }
 .announcements > h4,
 .announcements > p,
 .trending > h4,
-.trending > p  {
+.trending > p,
+.trending > div > h4,
+.trending > div > p  {
     font-size:x-small;
+    margin: 0px;
+    padding: 0px;
+    margin: 0px;       
+    line-height: 1;
+}
+.trending > div > h4 {
+    line-height: 0.4;
 }
 .announcements > p {
     border-bottom: 2px solid black;
     padding-bottom: 5px;
+}
+.trending > div {
+    display:grid;
+    grid-template: 24px 1fr / 24px 1fr;
+    align-items: center;
+}
+.trending > div > img {
+    grid-row: span 2;
 }
 
 /* Header*/
@@ -147,7 +165,7 @@ body {
 
 }
 .header_top{
-    grid-template-columns: 5fr 100px 200px 1fr;
+    grid-template-columns: 5fr 100px 1fr;
     display: grid;
     align-items: center;
 }
@@ -156,12 +174,15 @@ body {
     grid-template-columns: 50px 1fr;
     align-items: center;
     margin-right: 50px;
+    gap: 15px;
+    padding-top: 10px;
 }
 .header_bottom{
-    grid-template-columns: 150px 1fr repeat(3, 100px);
+    grid-template-columns: 150px minmax(200px, 1fr) repeat(3, 100px);
     display: grid;
     margin: 0px;
     align-items: center;
+    gap: 10px;
 }
 .useractions{
 display: grid;
